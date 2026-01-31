@@ -1,4 +1,5 @@
 import { fluxoAdicionarTarefa } from "./fluxos/CriarTarefa.js";
+import { fluxoMostarTarefas } from "./fluxos/MostrarTarefa.js";
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
@@ -7,7 +8,8 @@ function menu() {
     console.log(` ---- MENU DO PROJETO ----
         
                     1 - ADICIONAR TAREFA
-                    2 - SAIR`);
+                    2 - MOSTRA TAREFAS
+                    3 - SAIR`);
 
     const opcao = prompt("QUAL SUA OPÇÃO: ");
 
@@ -16,6 +18,9 @@ function menu() {
         fluxoAdicionarTarefa();
         break;
       case "2":
+        fluxoMostarTarefas();
+        break;
+      case "3":
         console.log("SAINDO");
         return;
 
