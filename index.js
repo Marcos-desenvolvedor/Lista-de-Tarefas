@@ -24,6 +24,13 @@ function menu() {
         console.log("SAINDO");
         return;
 
+      case "4":
+        "Atualizar tarefa";
+        break;
+      case "5":
+        "Deletar tarefa";
+        break;
+
       default:
         console.log("OPÇÃO INVÁLIDA");
         break;
