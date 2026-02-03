@@ -1,5 +1,6 @@
 import { fluxoAdicionarTarefa } from "./fluxos/CriarTarefa.js";
 import { fluxoMostarTarefas } from "./fluxos/MostrarTarefa.js";
+import { fluxoDeletarTarefa } from "./fluxos/DeletarTarefa.js";
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
@@ -9,7 +10,8 @@ function menu() {
         
                     1 - ADICIONAR TAREFA
                     2 - MOSTRA TAREFAS
-                    3 - SAIR`);
+                    4 - DELETAR TAREFA
+                    5 - SAIR`);
 
     const opcao = prompt("QUAL SUA OPÇÃO: ");
 
@@ -21,15 +23,16 @@ function menu() {
         fluxoMostarTarefas();
         break;
       case "3":
-        console.log("SAINDO");
-        return;
-
-      case "4":
         "Atualizar tarefa";
         break;
-      case "5":
-        "Deletar tarefa";
+
+      case "4":
+        fluxoDeletarTarefa();
         break;
+
+      case "5":
+        console.log("SAINDO");
+        return;
 
       default:
         console.log("OPÇÃO INVÁLIDA");
