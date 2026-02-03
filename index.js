@@ -1,6 +1,7 @@
 import { fluxoAdicionarTarefa } from "./fluxos/CriarTarefa.js";
 import { fluxoMostarTarefas } from "./fluxos/MostrarTarefa.js";
 import { fluxoDeletarTarefa } from "./fluxos/DeletarTarefa.js";
+import { FluxoAtualizarTarefa } from "./fluxos/AtualizarTarefa.js";
 import PromptSync from "prompt-sync";
 const prompt = PromptSync();
 
@@ -10,6 +11,7 @@ function menu() {
         
                     1 - ADICIONAR TAREFA
                     2 - MOSTRA TAREFAS
+                    3 - ATUALIZAR TAREFA
                     4 - DELETAR TAREFA
                     5 - SAIR`);
 
@@ -23,7 +25,7 @@ function menu() {
         fluxoMostarTarefas();
         break;
       case "3":
-        "Atualizar tarefa";
+        FluxoAtualizarTarefa();
         break;
 
       case "4":

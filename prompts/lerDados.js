@@ -1,4 +1,5 @@
 import PromptSync from "prompt-sync";
+
 const prompt = PromptSync();
 
 export function LerNomeTarefa(valor) {
@@ -23,4 +24,33 @@ export function LerID(valor) {
     }
     return Number(id);
   }
+}
+
+export function LerEstadoTarefa(valor) {
+  const regras = {
+    sim: true,
+    nao: false,
+    não: false,
+  };
+
+  while (true) {
+    const Realizado = prompt(valor).toLowerCase();
+
+    if (Realizado === "" || !isNaN(Realizado)) {
+      console.log("TEXTO INVÁLIDO");
+      continue;
+    }
+
+    return regras[Realizado];
+  }
+}
+
+export function LerDadosParaAtualizar() {
+  const NovoNome = LerNomeTarefa("QUAL NOVO NOME: ");
+  const tarefarRealizada = LerEstadoTarefa("REALIZADA: ");
+
+  return {
+    nome: NovoNome,
+    realizado: tarefarRealizada,
+  };
 }
