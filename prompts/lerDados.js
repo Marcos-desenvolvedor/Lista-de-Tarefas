@@ -41,6 +41,11 @@ export function LerEstadoTarefa(valor) {
       continue;
     }
 
+    if (!(Realizado in regras)) {
+      console.log("DIGITE: sim / nao");
+      continue;
+    }
+
     return regras[Realizado];
   }
 }

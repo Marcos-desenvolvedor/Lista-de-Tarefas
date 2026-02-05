@@ -13,5 +13,5 @@ export function adicionarTarefa(nome) {
 
   tarefas.push(NovaTarefa);
   salvarEmBanco(tarefas);
-  return { sucesso: false, mesagem: "TAREFA ADICIONADA" };
+  return { sucesso: true, mesagem: "TAREFA ADICIONADA" };
 }
